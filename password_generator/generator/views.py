@@ -7,6 +7,9 @@ from django.shortcuts import render
 def home(request):
     return render(request, "generator/home.html")
 
+def info(request):
+    return render(request, "generator/info.html")
+
 
 def password(request):
     thepassword = ""
