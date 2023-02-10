@@ -5,24 +5,23 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'generator/home.html')
-    
+    return render(request, "generator/home.html")
+
 
 def password(request):
-    thepassword = ''
+    thepassword = ""
 
-    charcaters = list('abcdefghijklmnopqrstuvwxyz')
+    charcaters = list("abcdefghijklmnopqrstuvwxyz")
 
     if request.GET.get("uppercase"):
-        charcaters.extend(list('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
+        charcaters.extend(list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
     if request.GET.get("special"):
-        charcaters.extend(list('!@#$%^&*()_+-='))
+        charcaters.extend(list("!#$%&()*+,-./:;<=>?@[\]^_{|}~"))
     if request.GET.get("numbers"):
-        charcaters.extend(list('1234567890'))
+        charcaters.extend(list("1234567890"))
 
     lenght = int(request.GET.get("length", 12))
 
     for x in range(lenght):
         thepassword += random.choice(charcaters)
-    return render(request, 'generator/password.html', {"password":thepassword})
-
+    return render(request, "generator/password.html", {"password": thepassword})
