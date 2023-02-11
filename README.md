@@ -1,3 +1,3 @@
 # Password_Generator
 
-Password generator written in Python, Django and Bootstrap 5
+Password generator written in Python, Django and Bootstrap 5.
